@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Trucks.Web.Models.TruckViewModel>
+﻿@model IEnumerable<Trucks.Crosscutting.ViewModels.TruckViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -10,7 +10,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ManufactureYear)
@@ -19,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.ModelYear)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TruckModel)
+                @Html.DisplayNameFor(model => model.TruckModel.Name)
             </th>
         </tr>
     </thead>
@@ -28,7 +31,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Description)
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ManufactureYear)
@@ -37,7 +43,7 @@
                     @Html.DisplayFor(modelItem => item.ModelYear)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TruckModel)
+                    @Html.DisplayFor(modelItem => item.TruckModel.Name)
                 </td>
             </tr>
         }

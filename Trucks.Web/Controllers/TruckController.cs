@@ -1,25 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Trucks.Domain.Contracts.Services;
 
 namespace Trucks.Web.Controllers
 {
     public class TruckController : Controller
     {
-        public TruckController()
+        private readonly ITruckService _truckService;
+
+        public TruckController(ITruckService truckService)
         {
+            _truckService = truckService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var trucks = new List<Models.TruckViewModel>()
-            {
-                new Models.TruckViewModel() 
-                { 
-                    Description = "Xpto",
-                    TruckModel = "FM",
-                    ManufactureYear = 2019,
-                    ModelYear = 2022
-                }
-            };
+            var trucks = _truckService.GetAll();
 
             return View(trucks);
         }
