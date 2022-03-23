@@ -12,8 +12,8 @@ namespace Trucks.Repository.Mappings
 
             builder.HasKey(p => p.Id);
 
-            builder.Property(p => p.Id).HasColumnName("ID").HasColumnType("int").IsRequired();
-            builder.Property(p => p.Name).HasColumnName("NAME").HasColumnType("varchar(50)").IsRequired();
+            builder.Property(p => p.Id).HasColumnName("ID").HasColumnType("INTEGER").IsRequired();
+            builder.Property(p => p.Name).HasColumnName("NAME").HasColumnType("VARCHAR(50)").IsRequired();
         }
     }
 }

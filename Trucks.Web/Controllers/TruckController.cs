@@ -14,7 +14,7 @@ namespace Trucks.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var trucks = _truckService.GetAll();
+            var trucks = await _truckService.GetAll();
 
             return View(trucks);
         }

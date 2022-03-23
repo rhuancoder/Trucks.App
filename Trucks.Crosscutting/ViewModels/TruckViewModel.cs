@@ -23,5 +23,8 @@ namespace Trucks.Crosscutting.ViewModels
 
         [DisplayName("Truck Model")]
         public TruckModelViewModel? TruckModel { get; set; }
+
+        [DisplayName("Truck Model")]
+        public IEnumerable<TruckModelViewModel>? TruckModels { get; set; }
     }
 }

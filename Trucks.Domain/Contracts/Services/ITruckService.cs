@@ -4,6 +4,6 @@ namespace Trucks.Domain.Contracts.Services
 {
     public interface ITruckService
     {
-        List<TruckViewModel> GetAll();
+        Task<List<TruckViewModel>> GetAll();
     }
 }

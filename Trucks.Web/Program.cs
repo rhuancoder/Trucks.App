@@ -5,8 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.RegisterServices();
+builder.Services.RegisterRepositories();
+builder.Services.RegisterDatabase(builder.Configuration);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.ConfigureDatabase(builder.Configuration);
 
 var app = builder.Build();
 
