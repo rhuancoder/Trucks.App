@@ -2,8 +2,7 @@
 
 namespace Trucks.Domain.Contracts.Repositories
 {
-    public interface ITruckRepository
+    public interface ITruckRepository : IBaseRepository<Truck>
     {
-        Task<List<Truck>> GetAll();
     }
 }

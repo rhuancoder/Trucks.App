@@ -14,6 +14,7 @@ namespace Trucks.IoC
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddScoped<ITruckService, TruckService>();
+            services.AddScoped<ITruckModelService, TruckModelService>();
         }
 
         public static void RegisterRepositories(this IServiceCollection services)

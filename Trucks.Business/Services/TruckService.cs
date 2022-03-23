@@ -18,11 +18,18 @@ namespace Trucks.Business.Services
             _mapper = mapper;
         }
 
-        public async Task<List<TruckViewModel>> GetAll()
+        public async Task<IList<TruckViewModel>> GetAllAsync()
         {
-            var trucks = await _truckRepository.GetAll();
+            var trucks = await _truckRepository.GetAllAsync();
 
-            return _mapper.Map<List<TruckViewModel>>(trucks);
+            return _mapper.Map<IList<TruckViewModel>>(trucks);
+        }
+
+        public async Task CreateAsync(TruckViewModel truckViewModel)
+        {
+            var truck = _mapper.Map<Truck>(truckViewModel);
+                
+            await _truckRepository.InsertAsync(truck);
         }
     }
 }

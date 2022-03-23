@@ -1,6 +1,8 @@
-﻿namespace Trucks.Domain.Contracts.Repositories
+﻿using Trucks.Domain.Entities;
+
+namespace Trucks.Domain.Contracts.Repositories
 {
-    public interface ITruckModelRepository
+    public interface ITruckModelRepository : IBaseRepository<TruckModel>
     {
     }
 }

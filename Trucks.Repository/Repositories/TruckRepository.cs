@@ -5,21 +5,13 @@ using Trucks.Repository.Contexts;
 
 namespace Trucks.Repository.Repositories
 {
-    public class TruckRepository : ITruckRepository
+    public class TruckRepository : BaseRepository<Truck>, ITruckRepository
     {
-        private readonly TrucksDBContext _context;
 
-        public TruckRepository(TrucksDBContext context)
+        public TruckRepository(TrucksDBContext context) : base(context)
         {
-            _context = context;
         }
 
-        public async Task<List<Truck>> GetAll()
-        {
-            return await _context.Trucks
-                .Include(x => x.TruckModel)
-                .AsNoTracking()
-                .ToListAsync();
-        }
+        public new async Task<IList<Truck>> GetAllAsync() => await _context.Trucks.Include(x => x.TruckModel).AsNoTracking().ToListAsync();
     }
 }
