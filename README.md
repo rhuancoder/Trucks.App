@@ -16,5 +16,5 @@ Build:
 
 Test:
 
-- Access the /Trucks.App solution directory from the terminal
+- Access the /Trucks.App solution directory from the terminal (if you downloaded the ZIP file, use the name inside the unzipped folder, for example: /Trucks.App-main)
 - Run the command 'dotnet test'
