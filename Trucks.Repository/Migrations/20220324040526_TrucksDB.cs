@@ -43,8 +43,8 @@ namespace Trucks.Repository.Migrations
                     COLOR = table.Column<string>(type: "VARCHAR(30)", nullable: false),
                     MANUFACTURE_YEAR = table.Column<int>(type: "INTEGER", nullable: false),
                     MODEL_YEAR = table.Column<int>(type: "INTEGER", nullable: false),
-                    CREATED_DATE = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    UPDATED_DATE = table.Column<DateTime>(type: "TEXT", nullable: true)
+                    CREATED_DATE = table.Column<DateTime>(type: "DATETIME", nullable: false),
+                    UPDATED_DATE = table.Column<DateTime>(type: "DATETIME", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -9,6 +9,7 @@ public class AutoMapperConfiguration : Profile
     public AutoMapperConfiguration()
     {
         CreateMap<Truck, TruckViewModel>().ReverseMap();
+        CreateMap<Truck, TruckViewModelDetails>().ReverseMap();
         CreateMap<TruckModel, TruckModelViewModel>().ReverseMap();
     }
 }

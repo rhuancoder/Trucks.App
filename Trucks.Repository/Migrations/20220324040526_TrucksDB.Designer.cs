@@ -11,7 +11,7 @@ using Trucks.Repository.Contexts;
 namespace Trucks.Repository.Migrations
 {
     [DbContext(typeof(TrucksDBContext))]
-    [Migration("20220324022734_TrucksDB")]
+    [Migration("20220324040526_TrucksDB")]
     partial class TrucksDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,7 +32,7 @@ namespace Trucks.Repository.Migrations
                         .HasColumnName("COLOR");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("TEXT")
+                        .HasColumnType("DATETIME")
                         .HasColumnName("CREATED_DATE");
 
                     b.Property<int>("IdTruckModel")
@@ -53,7 +53,7 @@ namespace Trucks.Repository.Migrations
                         .HasColumnName("NAME");
 
                     b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("TEXT")
+                        .HasColumnType("DATETIME")
                         .HasColumnName("UPDATED_DATE");
 
                     b.HasKey("Id");

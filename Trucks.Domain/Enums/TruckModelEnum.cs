@@ -3,6 +3,7 @@
     public enum TruckModelEnum
     {
         FH = 1,
-        FM
+        FM,
+        OTHERS
     }
 }

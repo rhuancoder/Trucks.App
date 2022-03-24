@@ -30,7 +30,7 @@ namespace Trucks.Repository.Migrations
                         .HasColumnName("COLOR");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("TEXT")
+                        .HasColumnType("DATETIME")
                         .HasColumnName("CREATED_DATE");
 
                     b.Property<int>("IdTruckModel")
@@ -51,7 +51,7 @@ namespace Trucks.Repository.Migrations
                         .HasColumnName("NAME");
 
                     b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("TEXT")
+                        .HasColumnType("DATETIME")
                         .HasColumnName("UPDATED_DATE");
 
                     b.HasKey("Id");

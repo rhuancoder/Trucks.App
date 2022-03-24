@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trucks.Repository", "Trucks
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trucks.IoC", "Trucks.IoC\Trucks.IoC.csproj", "{0F6646F0-963C-4C7C-9D35-DDF28EC1A9B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trucks.Crosscutting", "Trucks.Crosscutting\Trucks.Crosscutting.csproj", "{190F913A-55A9-4945-9646-D91B0813B9E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trucks.Crosscutting", "Trucks.Crosscutting\Trucks.Crosscutting.csproj", "{190F913A-55A9-4945-9646-D91B0813B9E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trucks.Tests", "Trucks.Tests\Trucks.Tests.csproj", "{AF30665A-3A20-4BF5-9EF2-2C6D39E762A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{190F913A-55A9-4945-9646-D91B0813B9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{190F913A-55A9-4945-9646-D91B0813B9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{190F913A-55A9-4945-9646-D91B0813B9E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF30665A-3A20-4BF5-9EF2-2C6D39E762A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF30665A-3A20-4BF5-9EF2-2C6D39E762A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF30665A-3A20-4BF5-9EF2-2C6D39E762A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF30665A-3A20-4BF5-9EF2-2C6D39E762A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

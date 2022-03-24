@@ -18,8 +18,8 @@ namespace Trucks.Repository.Mappings
             builder.Property(p => p.IdTruckModel).HasColumnName("ID_TRUCK_MODEL").HasColumnType("INTEGER").IsRequired();
             builder.Property(p => p.ManufactureYear).HasColumnName("MANUFACTURE_YEAR").HasColumnType("INTEGER").IsRequired();
             builder.Property(p => p.ModelYear).HasColumnName("MODEL_YEAR").HasColumnType("INTEGER").IsRequired();
-            builder.Property(p => p.CreatedDate).HasColumnName("CREATED_DATE").HasColumnType("TEXT").IsRequired();
-            builder.Property(p => p.UpdatedDate).HasColumnName("UPDATED_DATE").HasColumnType("TEXT");
+            builder.Property(p => p.CreatedDate).HasColumnName("CREATED_DATE").HasColumnType("DATETIME").IsRequired();
+            builder.Property(p => p.UpdatedDate).HasColumnName("UPDATED_DATE").HasColumnType("DATETIME");
 
             builder.HasOne(p => p.TruckModel).WithMany(p => p.Trucks).HasForeignKey(p => p.IdTruckModel).HasConstraintName("FK_TRUCK_TRUCK_MODEL");
         }
