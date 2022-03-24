@@ -4,60 +4,66 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Trucks</h2>
-
-<p> 
-    <a class="btn btn-outline-primary" asp-action="Create"><i class="fa-solid fa-circle-plus"></i> New</a>
-</p>
-
-<table class="table table-hover table-bordered">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Color)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ManufactureYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ModelYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TruckModel.Name)
-            </th>
-            <th>
-                Actions
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Color)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ManufactureYear)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ModelYear)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TruckModel.Name)
-                </td>
-                <td>
-                    <a class="btn btn-outline-secondary fa-solid fa-eye" asp-action="Create"></a>
-                    <a class="btn btn-outline-success fa-solid fa-pen-to-square" asp-action="Create"></a>
-                    <a class="btn btn-outline-danger fa-solid fa-trash-can" asp-action="Create"></a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h4>Trucks</h4></div>
+            <div class="card-body col-md-12">
+                <p>
+                    <a class="btn btn-outline-primary" asp-action="Create"><i class="fa-solid fa-circle-plus"></i> New</a>
+                </p>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Color)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ManufactureYear)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ModelYear)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TruckModel.Name)
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Color)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ManufactureYear)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ModelYear)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TruckModel.Name)
+                                </td>
+                                <td>
+                                    <a class="btn btn-outline-secondary fa-solid fa-eye" title="Details" asp-controller="Truck" asp-action="Details" asp-route-id="@item.Id"></a>
+                                    <a class="btn btn-outline-success fa-solid fa-pen-to-square" title="Edit" asp-controller="Truck" asp-action="Edit" asp-route-id="@item.Id"></a>
+                                    <a class="btn btn-outline-danger fa-solid fa-trash-can" title="Delete" asp-controller="Truck" asp-action="Delete" asp-route-id="@item.Id"></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,5 +13,7 @@ namespace Trucks.Repository.Repositories
         }
 
         public new async Task<IList<Truck>> GetAllAsync() => await _context.Trucks.Include(x => x.TruckModel).AsNoTracking().ToListAsync();
+
+        public new async Task<Truck> FindByIdAsync(int id) => await _context.Trucks.Include(x => x.TruckModel).FirstOrDefaultAsync(x => x.Id.Equals(id));
     }
 }

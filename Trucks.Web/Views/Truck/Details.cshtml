@@ -1,0 +1,68 @@
+﻿@model Trucks.Crosscutting.ViewModels.TruckViewModelDetails
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h4>Truck Details</h4></div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        <span>@Html.DisplayFor(model => model.Name)</span>
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Color)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Color)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.TruckModel)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.TruckModel.Name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ManufactureYear)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ManufactureYear)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ModelYear)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ModelYear)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.CreatedDate)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.CreatedDate)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.UpdatedDate)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.UpdatedDate)
+                    </dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <div class="row col-md-6">
+                    <div class="col-md-3">
+                        <a class="btn btn-outline-primary" asp-controller="Truck" asp-action="Edit" asp-route-id="@Model.Id"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="btn btn-outline-secondary" asp-controller="Truck" asp-action="Index"><i class="fa-solid fa-arrow-left"></i> Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -25,11 +25,45 @@ namespace Trucks.Business.Services
             return _mapper.Map<IList<TruckViewModel>>(trucks);
         }
 
+        public async Task<TruckViewModelDetails> GetDetailsAsync(int id)
+        {
+            var truck = await _truckRepository.FindByIdAsync(id);
+
+            return _mapper.Map<TruckViewModelDetails>(truck);
+        }
+
+        public async Task<TruckViewModel> GetAsync(int id)
+        {
+            var truck = await _truckRepository.FindByIdAsync(id);
+
+            return _mapper.Map<TruckViewModel>(truck);
+        }
+
         public async Task CreateAsync(TruckViewModel truckViewModel)
         {
             var truck = _mapper.Map<Truck>(truckViewModel);
-                
-            await _truckRepository.InsertAsync(truck);
+
+            if(truck.IsValid())
+                await _truckRepository.InsertAsync(truck);
+        }
+
+        public async Task UpdateAsync(int id, TruckViewModel truckViewModel)
+        {
+            var truck = await _truckRepository.FindByIdAsync(id);
+
+            var truckUpdated = _mapper.Map(truckViewModel, truck);
+
+            truckUpdated.SetUpdatedDate();
+
+            if (truckUpdated.IsValid())
+                await _truckRepository.UpdateAsync(truckUpdated);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var truck = await _truckRepository.FindByIdAsync(id);
+
+            await _truckRepository.DeleteAsync(truck);
         }
     }
 }

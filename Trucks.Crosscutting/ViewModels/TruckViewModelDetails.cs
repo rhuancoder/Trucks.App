@@ -1,10 +1,14 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Trucks.Crosscutting.ViewModels
 {
-    public class TruckViewModel
+    public class TruckViewModelDetails
     {
         public int Id { get; set; }
 
@@ -28,7 +32,12 @@ namespace Trucks.Crosscutting.ViewModels
         [DisplayName("Model Year")]
         public int ModelYear { get; set; }
 
-        [NotMapped]
+        [DisplayName("Created Date")]
+        public DateTime CreatedDate { get; set; }
+
+        [DisplayName("Updated Date")]
+        public DateTime? UpdatedDate { get; set; }
+
         [DisplayName("Truck Model")]
         public TruckModelViewModel? TruckModel { get; set; }
     }

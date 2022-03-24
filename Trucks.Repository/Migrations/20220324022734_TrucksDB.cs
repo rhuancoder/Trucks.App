@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -41,7 +42,9 @@ namespace Trucks.Repository.Migrations
                     NAME = table.Column<string>(type: "VARCHAR(50)", nullable: false),
                     COLOR = table.Column<string>(type: "VARCHAR(30)", nullable: false),
                     MANUFACTURE_YEAR = table.Column<int>(type: "INTEGER", nullable: false),
-                    MODEL_YEAR = table.Column<int>(type: "INTEGER", nullable: false)
+                    MODEL_YEAR = table.Column<int>(type: "INTEGER", nullable: false),
+                    CREATED_DATE = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    UPDATED_DATE = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -53,16 +56,6 @@ namespace Trucks.Repository.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.InsertData(
-                table: "TB_TRUCK",
-                columns: new[] { "ID", "ID_TRUCK_MODEL", "NAME", "COLOR", "MANUFACTURE_YEAR", "MODEL_YEAR" },
-                values: new object[] { 1, 2, "Xpto", "white", 2018, 2022 });
-
-            migrationBuilder.InsertData(
-                table: "TB_TRUCK",
-                columns: new[] { "ID", "ID_TRUCK_MODEL", "NAME", "COLOR", "MANUFACTURE_YEAR", "MODEL_YEAR" },
-                values: new object[] { 2, 1, "Asdf", "black", 2019, 2022 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_TRUCK_ID_TRUCK_MODEL",

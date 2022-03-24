@@ -14,7 +14,7 @@ namespace Trucks.Domain.Contracts.Repositories
 
         Task<T> InsertAsync(T entity);
 
-        Task<T> UpdateAsync(T entity);
+        Task UpdateAsync(T entity);
 
         Task<int> DeleteAsync(T entity);
     }

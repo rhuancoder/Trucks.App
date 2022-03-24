@@ -24,7 +24,24 @@ namespace Trucks.Domain.Entities
         public string? Color { get; private set; }
         public int ManufactureYear { get; private set; }
         public int ModelYear { get; private set; }
+        public DateTime CreatedDate { get; private set; } = DateTime.Now;
+        public DateTime? UpdatedDate { get; private set; }
 
         public TruckModel? TruckModel { get; private set; }
+
+        public void SetUpdatedDate()
+        {
+            UpdatedDate = DateTime.Now;
+        }
+
+        public bool IsValid()
+        {
+            var currentYear = DateTime.Now.Year;
+
+            if (Enum.IsDefined(typeof(TruckModelEnum), IdTruckModel) && ManufactureYear == currentYear && (ModelYear == currentYear || ModelYear == currentYear + 1))
+                return true;
+            else
+                return false;
+        }
     }
 }

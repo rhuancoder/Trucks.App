@@ -6,6 +6,14 @@ namespace Trucks.Domain.Contracts.Services
     {
         Task<IList<TruckViewModel>> GetAllAsync();
 
+        Task<TruckViewModelDetails> GetDetailsAsync(int id);
+
+        Task<TruckViewModel> GetAsync(int id);
+
         Task CreateAsync(TruckViewModel truckViewModel);
+
+        Task UpdateAsync(int id, TruckViewModel truckViewModel);
+
+        Task DeleteAsync(int id);
     }
 }
