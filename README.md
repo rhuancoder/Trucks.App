@@ -1,5 +1,5 @@
 # Trucks.App
-![alt text](https://github.com/rhuancoder/Trucks.App/blob/dev/trucks-app.png)
+![alt text](https://github.com/rhuancoder/Trucks.App/blob/main/trucks-app.png)
 
 Welcome to Trucks App!
 
